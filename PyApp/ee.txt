@@ -1,0 +1,121 @@
+creat table roles(
+id serial primary key,
+name varchar
+);
+
+creat table users(
+id serial primary key,
+surname varchar,
+name varchar,
+lastname varchar,
+lodin varchar,
+id_role int references roles(id)
+);
+
+create table categories(
+    id serial primary key,
+    name varchar
+);
+
+create table subcategories(
+    id serial primary key,
+    name varchar
+);
+
+create table manufactures(
+    id serial primary key,
+    name varchar
+);
+create table products(
+    id serial primary key,
+    id_category int references categories(id),
+    id_subcategory int references subcategories(id),
+    img varchar,
+    name varchar,
+    id_manufacture int references manufactures(id),
+    description varchar,
+    structure varchar,
+    price float
+);
+
+create table sizes(
+    id serial primary key,
+    name varchar
+);
+
+create table stocks(
+    id serial primary key,
+    id_product int references products(id),
+    id_size int references sizes(id),
+    count int
+);
+
+create table orders(
+    id serial primary key,
+    date date,
+    id_user int references users(id)
+);
+
+create table order_items(
+    id serial primary key,
+    id_orders int references orders(id),
+    id_stock int references stocks(id),
+    count int
+);
+
+
+
+python3 -m pip install "psycopg[binary]"
+
+ 
+self.engine = create_engine('postgresql://postgres:1234@localhost/ShopObuvTest')
+
+ 
+python -m pip install PyQt6
+
+python -m pip install PyQt5
+
+python -m pip uninstall PyQt6 PyQt6-Qt6 PyQt6-sip
+
+python -m pip install "psycopg[binary]"
+
+python -m pip install "psycopg[binary]"
+
+
+pip install psycopg2-binary
+pip install pyside6
+pip install sqlalchemy
+
+python -m pip install PySide6 SQLAlchemy "psycopg[binary]"
+
+python -c "import PySide6, sqlalchemy, psycopg; print('Все библиотеки установлены!')"
+
+from sqlalchemy import select
+
+from sqlalchemy.engine import create_engine
+
+from sqlalchemy.orm import Session
+
+from sqlalchemy.ext.automap import automap_base
+
+pyside6-designer
+pyside6-uic ui/auth_win.ui -o ui/auth_win.py
+
+ 
+=ИНДЕКС(Роли!A$2:A$4;ПОИСКПОЗ(E2; Роли!B$2:B$4;0;))
+
+ 
+Аля:
+
+INSERT INTO public.kategories (id, name)
+VALUES
+(1, 'Женская обувь'),
+(2, 'Детская обувь'),
+(3, 'Мужская обувь');
+
+ 
+
+Аля:
+
+SELECT COUNT(*) FROM public.products;
+
